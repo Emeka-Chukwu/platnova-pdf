@@ -1,5 +1,13 @@
 # platnova-pdf
 
+
+## How to run this project
+
+### System Requirements
+
+- Golang
+- Gin
+- wkhtmltopdf
 To get the account statements for Euro set the currency to eur
 
 
