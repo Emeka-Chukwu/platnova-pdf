@@ -10,4 +10,5 @@ func NewAccountRoutes(router *gin.RouterGroup, accountService services.AccountSe
 	accountHandler := NewAccountHandler(accountService)
 	route := router.Group("/accounts")
 	route.GET("/statements", accountHandler.FetchAccountStatement)
+	route.GET("/statements/local", accountHandler.CreatePdfAndSave)
 }

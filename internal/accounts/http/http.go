@@ -23,6 +23,7 @@ type accountHandler struct {
 
 type AccountHandler interface {
 	FetchAccountStatement(ctx *gin.Context)
+	CreatePdfAndSave(ctx *gin.Context)
 }
 
 func NewAccountHandler(accountService services.AccountServices) AccountHandler {
@@ -42,4 +43,19 @@ func (ah accountHandler) FetchAccountStatement(ctx *gin.Context) {
 	fileName := "account statement " + fmt.Sprintf("%d", time.Now().UnixNano()) + ".pdf"
 	ctx.Header("Content-Disposition", fmt.Sprintf("attachment; filename=%s", fileName))
 	ctx.Data(http.StatusOK, "application/pdf", pdf)
+}
+
+func (ah accountHandler) CreatePdfAndSave(ctx *gin.Context) {
+	currency := "usd"
+	query := util.GetUrlQueryParams[domain.QueryParams](ctx)
+	if strings.ToLower(query.Currency) == "eur" {
+		currency = "eur"
+	}
+	fileName := "account statement " + fmt.Sprintf("%d", time.Now().UnixNano()) + ".pdf"
+	path := "storage/" + fileName
+	err := ah.accountService.CreatePdfAndSaveOnLocal(accountStatementJson, templatePath, currency, path)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"status": http.StatusInternalServerError, "error": err.Error()})
+	}
+	ctx.JSON(http.StatusOK, gin.H{"status": http.StatusOK, "message": "Successfully created and saved pdf"})
 }
