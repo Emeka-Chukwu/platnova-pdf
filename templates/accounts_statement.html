@@ -1,0 +1,352 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolut EUR Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            overflow: auto;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header p {
+            font-size: 10px;
+            margin: 0;
+        }
+        .header-left {
+            float: left;
+        }
+        .header-right {
+            float: right;
+            text-align: right;
+        }
+        .header-right p {
+            margin: 0;
+        }
+        .account-info {
+            margin-top: 20px;
+            clear: both;
+        }
+        .account-info p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 8;
+        }
+        .iban-info {
+            height: 300px;
+            width: 390px;
+            float: right;
+            margin: 0;
+           
+        }
+        .balance-summary, .transactions {
+            margin-top: 0px;
+            float: left;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            /* border: 1px solid #ddd; */
+            padding: 8px;
+            text-align: left;
+        }
+        tr {
+            border-bottom: 1px solid black;
+        }
+        thead th {
+            background-color: white;
+            color: black;
+        }
+        .footer {
+               margin-top: 20px;
+            margin-top: 50px;
+            font-size: 12px;
+            color: #888;
+            width: 100%;
+            clear: both;
+        }
+        .footer-left {
+            float: left;
+            width: 30%;
+        }
+        .footer-right {
+            float: right;
+            width: 70%;
+        }
+
+        .account-info p {
+            font-size: 12;
+            margin: 0;
+
+        }
+       .details {
+        font-size: 10px;
+            margin: 0;
+       
+       }
+       .detailsName{
+        font-size: 15px;
+            margin: 0;
+     
+       }
+       .right {
+        float: right ;
+       }
+       .left {
+            float: left;
+       }
+     
+      .iban-info {
+        height: 235px;
+        width: 390px;
+      }
+
+      .iban-info .iban-box {
+        /* display: flex; */
+        column-gap: 20px;
+        margin-bottom: 8px;
+      }
+
+      .iban-info .iban-box p {
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .iban-box .left {
+        width: 50px;
+        float: left;
+      }
+
+      .iban-box .right {
+        width: 85%;
+        float: right;
+      }
+
+      .iban-info .iban-box small {
+        font-size: 12px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      .iban-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+    
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <p><img src="https://www.nordichq.com/wp-content/uploads/2023/09/revolut-bank.png" alt="Revolut" width="90" height="80" ></p>
+            </div>
+            <div class="header-right">
+                <h1>EUR Statement</h1>
+                <p>Generated on the {{.Account.StatementDate}}</p>
+                <p>Revolut Bank UAB</p>
+            </div>
+        </div>
+           
+           
+           <div>
+
+        <div class="account-info">
+            <p class="detailsName"><strong>{{.Name}}</strong></p>
+            <p class="details">{{.Address}}</p>
+        </div>
+    </div>
+
+    
+        
+            <div class="iban-container">
+                <div class="iban-info">
+                  <div class="iban-box">
+                    <p class="left"><strong>IBAN</strong></p>
+                    <div class="right">
+                      <p>{{.IBankBic1}}</p>
+                    </div>
+                  </div>
+        
+                  <div class="iban-box">
+                    <p class="left"><strong>BIC</strong></p>
+                    <div class="right">
+                      <p>{{.BIC1}}</p>
+                    </div>
+                  </div>
+        
+                  <!-- <br />
+                  <p></p> -->
+        
+                  <div class="iban-box">
+                    <br />
+                    <br />
+                    <p class="left"><strong>IBAN</strong></p>
+                    <div class="right">
+                      <p>{{.IBankBic2}}</p>
+                    </div>
+                  </div>
+        
+                  <div class="iban-box">
+                    <p class="left"><strong>BIC</strong></p>
+                    <div class="right">
+                      <p>{{.BIC2}}</p>
+                      <small>
+                        (You cannot use this IBAN for bank transfers. Please use the
+                        IBAN found in the app)
+                      </small>
+                    </div>
+                  </div>
+        
+                
+                  <p></p>
+                  <br />
+                  <p></p>
+        
+                  <div class="iban-box">
+                    <br>  <br />
+                    <p class="left"><strong>IBAN</strong></p>
+                    <div class="right">
+                      <p>{{.IBankBic3}}</p>
+                    </div>
+                  </div>
+        
+                  <div class="iban-box">
+                    <p class="left"><strong>BIC</strong></p>
+                    <div class="right">
+                      <p>{{.BIC3}}</p>
+                      <small>
+                        (You cannot use this IBAN for bank transfers. Please use the
+                        IBAN found in the app)
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              
+            <!-- <p><strong>IBAN</strong> {{.IBankBic1}}</p>
+           
+            
+            <p><strong>IBAN</strong>  {{.IBankBic2}}</p>
+            <p><strong>BIC</strong> {{.BIC2}}</p>
+            <small>(You cannot use this IBAN for bank transfers. Please use the IBAN found in the app)</small>
+            <p><strong>IBAN</strong>  {{.IBankBic3}}</p>
+            <p><strong>BIC</strong> {{.BIC3}}</p>
+            <small>(You cannot use this IBAN for bank transfers. Please use the IBAN found in the app)</small> -->
+        </div>
+
+        <div class="balance-summary">
+            <h3>Balance summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Opening balance</th>
+                        <th>Money out</th>
+                        <th>Money in</th>
+                        <th>Closing balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Account ({{.Account.AccountName}})</td>
+                        <td>{{.Currency1}}{{.Account.OpeningBalance}}</td>
+                        <td>{{.Currency1}}{{.Account.MoneyOut}}</td>
+                        <td>{{.Currency1}}{{.Account.MoneyIn}}</td>
+                        <td>{{.Currency1}}{{.Account.Balance}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{.Currency1}}{{.Account.OpeningBalance}}</td>
+                        <td>{{.Currency1}}{{.Account.MoneyOut}}</td>
+                        <td>{{.Currency1}}{{.Account.MoneyIn}}</td>
+                        <td>{{.Currency1}}{{.Account.Balance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <small>The balance on your statement might differ from the balance shown in your app. The statement balance only reflects completed transactions, while the app shows the balance available for use, which accounts for pending transactions.</small>
+        </div>
+
+   
+        <div class="transactions">
+            <br><br><br>
+            <h3>Account transactions from {{.StatementPeriod}}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Money out</th>
+                        <th>Money in</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Transactions}}
+                    <tr>
+                        <td>{{.Date}}</td>
+                        <td>{{.Description}}</td>
+                        <td>  {{if eq .MoneyOut 0.0}}
+                        {{else}}
+                        {{.Currency}}{{.MoneyOut}}
+                        {{end}}
+                    </td>
+                        <td>  {{if eq .MoneyIn 0.0}}
+                        {{else}}
+                        {{.Currency}} {{.MoneyIn}}
+                        {{end}}
+                    </td>
+                        <td>{{.Currency}}{{.Balance}}</td>
+                    </tr>
+                    {{else}}
+                    <li>No transactions available.</li>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+            <div class="footer-left">
+                <img src="https://support.thinkific.com/hc/article_attachments/360042081334/5d37325ea1ff6.png" alt="QR Code" width="100" height="100"/>
+                <p>Report lost or stolen card</p>
+                <small>+370 5 214 3008</small>
+                <p>Get help directly in app</p>
+                <small>Scan the QR code</small>
+            </div>
+            <div class="footer-right">
+                <p>Report lost or stolen card +370 5 214 3008</p>
+                <p>Get help directly in app</p>
+                <p>Scan the QR code</p>
+                <p>Revolut Bank UAB is a credit institution licensed in the Republic of Lithuania with company number 304580906 and authorisation code LB002241. Revolut Bank UAB is regulated by the Bank of Lithuania and the European Central Bank. The deposits are protected by the Lithuanian Deposit Insurance Scheme but some exceptions may apply. Please refer to our Deposit Insurance Information document for more information on deposit system insurance of the State Enterprise Deposit and Investment Insurance (VĮ "Indėlių ir investicijų draudimas") is available at www.idf.lt/en. If you have any questions, please reach out to us via the in-app chat in the Revolut app.</p>
+                <p>© 2023 Revolut Bank UAB</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

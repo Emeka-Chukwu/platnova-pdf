@@ -1,0 +1,115 @@
+[{
+    "account": {
+      "opening_balance": 2.52,
+      "closing_balance": 36.43,
+      "account_name": "Current Account",
+      "statement_date": "10 May 2023",
+      "money_out": 1944.09,
+      "money_in": 1978.00,
+      "product": "Account (Current Account)",
+      "balance": 36.43,
+      "currency_1":"$"
+    },
+    "transactions": [
+      {
+        "date": "3 Feb 2023",
+        "description": "Apple Pay Top-Up by *5453",
+        "money_out": 0,
+        "money_in": 50.00,
+        "balance": 52.52,
+        "currency":"$"
+      },
+      {
+        "date": "3 Feb 2023",
+        "description": "Apple Pay Top-Up by *5453",
+        "money_out": 100.00,
+        "money_in": 0,
+        "balance": 52.52,
+        "currency":"$"
+      },
+      {
+        "date": "3 Feb 2023",
+        "description": "To LINA MILLER SAULGRIEZE",
+        "money_out": 100.00,
+        "money_in": 0,
+        "balance": 52.52,
+        "currency":"$"
+      },
+      {
+        "date": "7 Feb 2023",
+        "description": "To LINA MILLER SAULGRIEZE",
+        "money_out": 10.00,
+        "money_in": 0,
+        "balance": 42.52,
+        "currency":"$"
+      }
+    ],
+    "i_bank_bic_1": "IE30REVO9930622547749",
+    "i_bank_bic_2": "LT093250041069208595",
+    "i_bank_bic_3": "LT08707024346246713",
+    "statement_period": "1 February 2023 to 29 March 2023",
+    "address":"14 The Dale \nWhitefield hall \nBettystown \nMeath \nA92NZ7C",
+    "name":"SANDRA SAULGRIEZE",
+    "bic_1":"REVOIE23",
+    "bic_2":"REVOLT21",
+    "bic_3":"RETBLT21",
+    "currency_1":"$" 
+  },
+  {
+    "account": {
+      "opening_balance": 2.52,
+      "closing_balance": 36.43,
+      "account_name": "Current Account",
+      "statement_date": "10 May 2023",
+      "money_out": 1944.09,
+      "money_in": 1978.00,
+      "product": "Account (Current Account)",
+      "balance": 36.43,
+      "currency_1":"€"
+    },
+    "transactions": [
+      {
+        "date": "3 Feb 2023",
+        "description": "Apple Pay Top-Up by *5453",
+        "money_out": 0,
+        "money_in": 50.00,
+        "balance": 52.52,
+        "currency":"€"
+      },
+      {
+        "date": "3 Feb 2023",
+        "description": "Apple Pay Top-Up by *5453",
+        "money_out": 100.00,
+        "money_in": 0,
+        "balance": 52.52,
+        "currency":"€"
+      },
+      {
+        "date": "3 Feb 2023",
+        "description": "To LINA MILLER SAULGRIEZE",
+        "money_out": 100.00,
+        "money_in": 0,
+        "balance": 52.52,
+        "currency":"€"
+      },
+      {
+        "date": "7 Feb 2023",
+        "description": "To LINA MILLER SAULGRIEZE",
+        "money_out": 10.00,
+        "money_in": 0,
+        "balance": 42.52,
+        "currency":"€"
+      }
+    ],
+    "i_bank_bic_1": "IE30REVO9930622547749",
+    "i_bank_bic_2": "LT093250041069208595",
+    "i_bank_bic_3": "LT08707024346246713",
+    "statement_period": "1 February 2023 to 29 March 2023",
+    "address":"14 The Dale \nWhitefield hall \nBettystown \nMeath \nA92NZ7C",
+    "name":"SANDRA SAULGRIEZE",
+    "bic_1":"REVOIE23",
+    "bic_2":"REVOLT21",
+    "bic_3":"RETBLT21",
+    "currency_1":"€" 
+  }
+]
