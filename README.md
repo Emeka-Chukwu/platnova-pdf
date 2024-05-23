@@ -10,7 +10,7 @@
 - wkhtmltopdf
 
 
-##To get the account statements for Euro set the currency to eur
+## To get the account statements for Euro set the currency to eur
 
 
 ```console
@@ -24,4 +24,13 @@ usd is the default currency
 
 ```console
 http://localhost:8080/api/v1/accounts/statements?currency=usd
+```
+
+
+
+## To save to storage directory
+
+
+```console
+http://localhost:8080/api/v1/accounts/statements/local?currency=usd
 ```
